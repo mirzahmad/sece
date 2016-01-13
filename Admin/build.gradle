@@ -1,0 +1,18 @@
+apply plugin: 'war'
+
+dependencies {
+    providedCompile project(':Core').earLibraries
+    providedCompile project(':Core')
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+}
+
+war {
+    archiveName = 'admin.war'
+    manifest {
+        attributes(
+                "Implementation-Title": 'Sece Admin',
+                "Implementation-Version": version,
+                "Class-Path": configurations.compile.collect { it.getName() }.join(' ')
+        )
+    }
+}
