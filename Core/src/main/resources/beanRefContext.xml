@@ -10,8 +10,8 @@
         <constructor-arg>
             <list>
                 <value>classpath*:service-context.xml</value>
+                <value>classpath*:db-context.xml</value>
             </list>
         </constructor-arg>
     </bean>
-
 </beans>

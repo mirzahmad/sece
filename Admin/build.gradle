@@ -1,9 +1,13 @@
 apply plugin: 'war'
 
 dependencies {
-    providedCompile project(':Core').earLibraries
+    providedCompile earLibraries
+    providedCompile earProvidedLibraries
     providedCompile project(':Core')
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'org.springframework:spring-webmvc:4.2.4.RELEASE'
+    compile 'org.springframework.security:spring-security-web:4.0.3.RELEASE'
+
 }
 
 war {

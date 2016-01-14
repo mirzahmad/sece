@@ -3,6 +3,7 @@ apply plugin: 'java'
 
 dependencies {
     compile earLibraries
+    compile earProvidedLibraries
 }
 
 jar {

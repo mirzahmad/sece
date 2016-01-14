@@ -24,7 +24,7 @@
         <description>Calls the generic SampleService from its parent ApplicationContext</description>
         <display-name>FirstServlet</display-name>
         <servlet-name>FirstServlet</servlet-name>
-        <servlet-class>org.sece.HelloServlet</servlet-class>
+        <servlet-class>org.sece.ui.HelloServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

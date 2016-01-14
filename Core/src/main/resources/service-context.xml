@@ -8,6 +8,6 @@
    <!-- Configuration by annotation -->
 
    <context:annotation-config />
-   <context:component-scan base-package="org.sece"/>
+   <context:component-scan base-package="org.sece.core"/>
 
 </beans>
