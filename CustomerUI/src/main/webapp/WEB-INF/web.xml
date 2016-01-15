@@ -21,19 +21,21 @@
     </listener>
 
     <servlet>
-        <description>Calls the generic SampleService from its parent ApplicationContext</description>
-        <display-name>FirstServlet</display-name>
-        <servlet-name>FirstServlet</servlet-name>
-        <servlet-class>org.sece.ui.HelloServlet</servlet-class>
+        <servlet-name>SpringMVC Dispatcher</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/applicationContext.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>FirstServlet</servlet-name>
-        <url-pattern>/first</url-pattern>
+        <servlet-name>SpringMVC Dispatcher</servlet-name>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 
-    <welcome-file-list>
-        <welcome-file>first</welcome-file>
-    </welcome-file-list>
 </web-app>
 
