@@ -13,11 +13,10 @@ import java.util.List;
 /**
  * Created by mirza on 1/14/16.
  */
-@Repository
 public class GenericDAO<T extends AbstractEntity, PK extends Serializable> implements DAO<T, PK> {
 
     @PersistenceContext(unitName = "seceUnit") //TODO, do research if we want shared or not
-    private EntityManager em;
+    protected EntityManager em;
 
     @Override
     public T create(T t) {

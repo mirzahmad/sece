@@ -9,7 +9,7 @@
 
     <context-param>
         <param-name>parentContextKey</param-name>
-        <param-value>ear.context</param-value>
+        <param-value>genericContext</param-value>
     </context-param>
 
     <listener>

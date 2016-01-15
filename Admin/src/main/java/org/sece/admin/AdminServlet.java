@@ -1,15 +1,15 @@
 package org.sece.admin;
 
 import org.sece.core.CoreClass;
-import org.sece.core.catalog.model.jpa.TestClass;
-import org.sece.core.catalog.repo.TestRepo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import java.io.*;
-
-import javax.servlet.http.*;
-import javax.servlet.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class AdminServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -20,9 +20,6 @@ public class AdminServlet extends HttpServlet {
         AdminClass adminClass = ctx.getBean(AdminClass.class);
         out.println(adminClass.say());
         out.println(coreClass.say());
-        TestRepo testRepo = ctx.getBean(TestRepo.class);
-        testRepo.save(new TestClass("Odil"));
-        testRepo.save(new TestClass("Elbek"));
         out.close();
     }
 }

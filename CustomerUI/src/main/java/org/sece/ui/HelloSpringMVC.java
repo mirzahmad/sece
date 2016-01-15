@@ -26,6 +26,12 @@ public class HelloSpringMVC {
     @Autowired
     TestDAO testDAO;
 
+    @Autowired
+    UIClass uiClass;
+
+    @Autowired
+    CoreClass coreClass;
+
     private static List<User> userList = new ArrayList<User>();
 
     //Initialize the list with some data for index screen
