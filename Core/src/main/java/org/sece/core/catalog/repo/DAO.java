@@ -12,21 +12,21 @@ import java.util.List;
  * Created by mirza on 1/14/16.
  */
 public interface DAO<T extends AbstractEntity, PK extends Serializable> {
-    public T create(T t);
+    T create(T t);
 
-    public T find(Class type, PK id);
+    T find(Class type, PK id);
 
-    public T update(T t);
+    T update(T t);
 
-    public void delete(Class type, PK id);
+    void delete(Class type, PK id);
 
-    public List<T> findWithNamedQuery(String queryName, JPAQueryBuilder jpaQueryBuilder);
+    List<T> findWithNamedQuery(String queryName, JPAQueryBuilder jpaQueryBuilder);
 
-    public List<T> finByQuery(String jpaQuery, JPAQueryBuilder jpaQueryBuilder);
+    List<T> findByQuery(String jpaQuery, JPAQueryBuilder jpaQueryBuilder);
 
-    public int execute(String jpaQuery, JPAQueryBuilder jpaQueryBuilder);
+    int execute(String jpaQuery, JPAQueryBuilder jpaQueryBuilder);
 
-    public abstract static class JPAQueryBuilder {
+    abstract class JPAQueryBuilder {
         public abstract void build(Query query);
     }
 }

@@ -1,17 +1,15 @@
-package org.sece.core.catalog.model;
+package org.sece.core.catalog.model.jpa;
+
+import org.sece.core.catalog.model.AbstractEntity;
 
 import javax.persistence.*;
 
 /**
- * Created by elbek on 1/13/16.
+ * Created by mirza on 1/13/16.
  */
 @Table(name = "testTable")
 @Entity
-public class TestClass {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class TestClass extends AbstractEntity {
 
     private String name;
 
@@ -20,14 +18,6 @@ public class TestClass {
 
     public TestClass(String name) {
         this.name = name;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getName() {

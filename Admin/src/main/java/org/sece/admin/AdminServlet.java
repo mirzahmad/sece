@@ -1,7 +1,7 @@
 package org.sece.admin;
 
 import org.sece.core.CoreClass;
-import org.sece.core.catalog.model.TestClass;
+import org.sece.core.catalog.model.jpa.TestClass;
 import org.sece.core.catalog.repo.TestRepo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -18,11 +18,11 @@ public class AdminServlet extends HttpServlet {
         ApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
         CoreClass coreClass = ctx.getBean(CoreClass.class);
         AdminClass adminClass = ctx.getBean(AdminClass.class);
+        out.println(adminClass.say());
+        out.println(coreClass.say());
         TestRepo testRepo = ctx.getBean(TestRepo.class);
         testRepo.save(new TestClass("Odil"));
         testRepo.save(new TestClass("Elbek"));
-        out.println(coreClass.say());
-        out.println(adminClass.say());
         out.close();
     }
 }

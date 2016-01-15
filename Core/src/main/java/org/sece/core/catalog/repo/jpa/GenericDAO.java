@@ -39,7 +39,9 @@ public class GenericDAO<T extends AbstractEntity, PK extends Serializable> imple
 
     @Override
     public void delete(Class type, PK id) {
-        //TODO, implement
+        //TODO
+        Object ref = this.em.getReference(type, id);
+        this.em.remove(ref);
     }
 
     @Override
@@ -51,8 +53,7 @@ public class GenericDAO<T extends AbstractEntity, PK extends Serializable> imple
         return query.getResultList();
     }
 
-    @Override
-    public List<T> finByQuery(String jpaQuery, JPAQueryBuilder jpaQueryBuilder) {
+    public List<T> findByQuery(String jpaQuery, JPAQueryBuilder jpaQueryBuilder) {
         Query q = em.createQuery(jpaQuery);
         if (jpaQueryBuilder != null) {
             jpaQueryBuilder.build(q);
