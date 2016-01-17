@@ -1,9 +1,11 @@
 we use flyway db for migration. 
-runt his command to migrate 'gralde flywayMigrate' from this folder
-it will migrate any outstanding files in sql-migrations folder. 
+Run this command 'gralde flywayMigrate' to migrate from this folder
+It will migrate any outstanding files in sql-migrations folder. 
 When you pull changes from git remote repo see if any new files created in sql-migrations folder, if so then run 'gralde flywayMigrate' command to sync db. when you have new changes to commit run the following command: 'gradle flywayInfo' which will tell you what is the version of the db. Once you know create a script in this format:
 migration-current_version+1-yourname.sql.
 for example current version is 568 then script will be:
 migration-569-mirza.sql. 
 
 'gradle flywayInfo' command will also tell if there are any outstanding sql files that need to run. 
+
+Learn more here: http://flywaydb.org/
