@@ -9,7 +9,7 @@ import javax.persistence.MappedSuperclass;
  * Created by mirza on 1/14/16.
  */
 @MappedSuperclass
-public class AbstractEntity {
+public abstract class AbstractEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
