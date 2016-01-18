@@ -11,15 +11,3 @@ buildscript {
 }
 
 apply plugin: "org.flywaydb.flyway"
-
-flyway {
-    driver = 'com.mysql.jdbc.Driver'
-    url = 'jdbc:mysql://localhost:3306/secedb'
-    user = 'root'
-    password = 'root'
-    table = 'schema_history'
-    locations = ['filesystem:sql-migrations']
-    sqlMigrationPrefix = 'migration-'
-    sqlMigrationSuffix = '.sql'
-    sqlMigrationSeparator = '-'
-}
