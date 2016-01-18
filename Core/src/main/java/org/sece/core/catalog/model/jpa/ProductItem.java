@@ -1,6 +1,6 @@
 package org.sece.core.catalog.model.jpa;
 
-import org.sece.core.catalog.model.AbstractDatableEntity;
+import org.sece.core.common.model.jpa.AbstractDatableEntity;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,6 +13,13 @@ import java.util.List;
 @Table(name = "product_item")
 @AttributeOverride(name = "ID", column = @Column(name = "product_item_id"))
 public class ProductItem extends AbstractDatableEntity {
+
+    public enum Condition {
+        NEW,
+        USED_GOOD,
+        USED_ACCEPTABLE,
+        REFURBISHED;
+    }
 
     @Column(unique = true, nullable = false)
     private String sku;

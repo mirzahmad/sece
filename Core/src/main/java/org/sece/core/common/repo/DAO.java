@@ -1,6 +1,6 @@
-package org.sece.core.catalog.repo;
+package org.sece.core.common.repo;
 
-import org.sece.core.catalog.model.AbstractEntity;
+import org.sece.core.common.model.jpa.AbstractEntity;
 
 import javax.persistence.Query;
 import java.io.Serializable;

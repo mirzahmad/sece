@@ -1,8 +1,7 @@
-package org.sece.core.catalog.repo.jpa;
+package org.sece.core.common.repo.jpa;
 
-import org.sece.core.catalog.model.AbstractEntity;
-import org.sece.core.catalog.repo.DAO;
-import org.springframework.stereotype.Repository;
+import org.sece.core.common.model.jpa.AbstractEntity;
+import org.sece.core.common.repo.DAO;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

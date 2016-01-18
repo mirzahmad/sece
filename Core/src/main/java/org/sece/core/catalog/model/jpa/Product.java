@@ -1,7 +1,7 @@
 package org.sece.core.catalog.model.jpa;
 
 
-import org.sece.core.catalog.model.AbstractDatableEntity;
+import org.sece.core.common.model.jpa.AbstractDatableEntity;
 
 import javax.persistence.*;
 

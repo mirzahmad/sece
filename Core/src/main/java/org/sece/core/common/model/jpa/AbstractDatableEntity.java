@@ -1,4 +1,4 @@
-package org.sece.core.catalog.model;
+package org.sece.core.common.model.jpa;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
