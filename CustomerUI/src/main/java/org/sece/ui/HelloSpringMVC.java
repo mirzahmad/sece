@@ -1,10 +1,6 @@
 package org.sece.ui;
 
 import org.sece.core.CoreClass;
-import org.sece.core.catalog.model.jpa.TestClass;
-import org.sece.core.catalog.repo.DAO;
-import org.sece.core.catalog.repo.jpa.GenericDAO;
-import org.sece.core.catalog.repo.jpa.TestDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,7 +8,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,9 +17,6 @@ import java.util.List;
  */
 @Controller
 public class HelloSpringMVC {
-
-    @Autowired
-    TestDAO testDAO;
 
     @Autowired
     UIClass uiClass;
@@ -46,13 +38,6 @@ public class HelloSpringMVC {
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(@ModelAttribute("model") ModelMap model) {
         model.addAttribute("userList", userList);
-        List<TestClass> list = testDAO.findByQuery("from TestClass t where t.name=:name", new DAO.JPAQueryBuilder() {
-            @Override
-            public void build(Query query) {
-                query.setParameter("name", "Elbek");
-            }
-        });
-
         return "index";
     }
 

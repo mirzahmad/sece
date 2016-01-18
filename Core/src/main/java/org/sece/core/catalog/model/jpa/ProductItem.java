@@ -18,7 +18,7 @@ public class ProductItem extends AbstractDatableEntity {
     private String sku;
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Long productId;
+    private Product productId;
     private Integer cost = 0;
     @Column(name = "regular_price", nullable = false)
     private Integer regularPrice;
@@ -43,6 +43,7 @@ public class ProductItem extends AbstractDatableEntity {
     private float weight = 0.0f;
     private float width = 0.0f;
     private float height = 0.0f;
+    @Column(name = "product_item_depth")
     private float depth = 0.0f;
     @Column(nullable = false)
     private boolean enabled;
@@ -58,14 +59,15 @@ public class ProductItem extends AbstractDatableEntity {
     @Lob
     private String description;
     @Enumerated(EnumType.STRING)
+    @Column(name = "product_item_condition")
     private Condition condition;
     @Lob
     private String warranty;
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_item_id", referencedColumnName = "product_item_id")
+    @JoinColumn(name = "product_item_id", referencedColumnName = "ID")
     private List<ProductItemOption> productItemOptions;
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_item_id", referencedColumnName = "product_item_id")
+    @JoinColumn(name = "product_item_id", referencedColumnName = "ID")
     private List<ProductItemMediaFiles> productItemMediaFiles;
 
     public String getSku() {
@@ -76,11 +78,11 @@ public class ProductItem extends AbstractDatableEntity {
         this.sku = sku;
     }
 
-    public Long getProductId() {
+    public Product getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(Product productId) {
         this.productId = productId;
     }
 

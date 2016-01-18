@@ -1,8 +1,5 @@
 package org.sece.admin;
 
-import org.sece.core.CoreClass;
-import org.sece.core.catalog.repo.jpa.TestDAO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**

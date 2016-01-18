@@ -1,5 +1,7 @@
 package org.sece.core.catalog.model.jpa;
 
+import org.sece.core.catalog.model.AbstractEntity;
+
 import javax.persistence.*;
 
 /**
@@ -8,7 +10,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "product_item_media_files")
 @AttributeOverride(name = "ID", column = @Column(name = "media_file_id"))
-public class ProductItemMediaFiles {
+public class ProductItemMediaFiles extends AbstractEntity{
 
     @Column(name = "media_type", nullable = false)
     private char mediaType;

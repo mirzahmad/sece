@@ -16,7 +16,8 @@ public class Category extends AbstractEntity {
     @Column(nullable = false)
     @Lob
     private String description;
-    @Column(name = "parent_id")
+    @ManyToOne
+    @JoinColumn(name = "parent_id")
     private Category parentId;
     @Column(name = "meta_tags")
     private String metaTags;
@@ -24,6 +25,7 @@ public class Category extends AbstractEntity {
     private String imageUrl;
     @Column(name = "parent_ids")
     private String parentIds;
+    @Column(name = "category_order")
     private int order;
     private boolean enabled;
 

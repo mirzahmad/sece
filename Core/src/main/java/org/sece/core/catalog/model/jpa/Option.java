@@ -20,7 +20,7 @@ public class Option extends AbstractEntity {
     @Column(name = "option_type", nullable = false)
     private String optionType;
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "option_id", referencedColumnName = "option_id")
+    @JoinColumn(name = "option_id", referencedColumnName = "ID")
     private List<ProductItemOption> productItemOptions;
 
     public char getOptionCode() {

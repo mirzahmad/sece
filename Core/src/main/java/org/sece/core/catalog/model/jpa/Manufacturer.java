@@ -1,5 +1,7 @@
 package org.sece.core.catalog.model.jpa;
 
+import org.sece.core.catalog.model.AbstractEntity;
+
 import javax.persistence.*;
 
 /**
@@ -7,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @AttributeOverride(name = "ID", column = @Column(name = "manufacturer_id"))
-public class Manufacturer {
+public class Manufacturer extends AbstractEntity{
 
     @Column(nullable = false)
     private String name;
