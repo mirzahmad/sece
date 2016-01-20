@@ -1,4 +1,6 @@
-package org.sece.core.catalog.model.jpa;
+package org.sece.core.oms.model.jpa;
+
+import org.sece.core.catalog.model.jpa.Store;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,7 +10,6 @@ import java.util.Date;
  * Created by Odiljon Sattarov on 1/18/2016.
  */
 @Entity
-@AttributeOverride(name = "ID", column = @Column(name = "inventory_id"))
 public class Inventory {
 
     @EmbeddedId
@@ -23,7 +24,9 @@ public class Inventory {
     private long backOrderAvailable = 0;
     @Column(name = "sold_out_threshold")
     private long soldOutThreshold = 0;
+
     private long placed = 0;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "last_imported_date")
     private Date lastImportedDate;
@@ -126,7 +129,7 @@ public class Inventory {
     }
 
     @Embeddable
-    class InventoryID implements Serializable {
+    public static class InventoryID implements Serializable {
         @Column(name = "store_id")
         private int storeId;
         private String sku;
