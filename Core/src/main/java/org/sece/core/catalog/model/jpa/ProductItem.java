@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "product_item")
-@AttributeOverride(name = "ID", column = @Column(name = "product_item_id"))
+@AttributeOverride(name = "id", column = @Column(name = "product_item_id"))
 public class ProductItem extends AbstractDatableEntity {
 
     public enum Condition {
@@ -75,10 +75,10 @@ public class ProductItem extends AbstractDatableEntity {
     @Column(name = "handling_cost")
     private long handlingCost = 0;
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_item_id", referencedColumnName = "ID")
+    @JoinColumn(name = "product_item_id", referencedColumnName = "product_item_id")
     private List<ProductItemOption> productItemOptions;
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_item_id", referencedColumnName = "ID")
+    @JoinColumn(name = "product_item_id", referencedColumnName = "product_item_id")
     private List<ProductItemMediaFiles> productItemMediaFiles;
 
     public String getSku() {

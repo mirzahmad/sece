@@ -10,7 +10,7 @@ import javax.persistence.Entity;
  * Created by Odiljon Sattarov on 1/18/2016.
  */
 @Entity
-@AttributeOverride(name = "ID", column = @Column(name = "state_id"))
+@AttributeOverride(name = "id", column = @Column(name = "state_id"))
 public class State extends AbstractEntity {
     @Column(name = "state_name", nullable = false)
     private String stateName;

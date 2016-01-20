@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "product_item_option")
-@AttributeOverride(name = "ID", column = @Column(name = "product_item_option_id"))
+@AttributeOverride(name = "id", column = @Column(name = "product_item_option_id"))
 public class ProductItemOption extends AbstractEntity{
 
     @Column(name = "option_code", nullable = false)

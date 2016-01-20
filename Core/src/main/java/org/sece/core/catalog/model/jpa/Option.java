@@ -9,7 +9,7 @@ import java.util.List;
  * Created by mr.taranto on 1/17/2016.
  */
 @Entity
-@AttributeOverride(name = "ID", column = @Column(name = "option_id"))
+@AttributeOverride(name = "id", column = @Column(name = "option_id"))
 public class Option extends AbstractEntity {
     @Column(name = "option_code", nullable = false)
     private char optionCode;
@@ -21,7 +21,7 @@ public class Option extends AbstractEntity {
     private String optionType;
 
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "option_id", referencedColumnName = "ID")
+    @JoinColumn(name = "option_id", referencedColumnName = "option_id")
     private List<ProductItemOption> productItemOptions;
 
     public char getOptionCode() {

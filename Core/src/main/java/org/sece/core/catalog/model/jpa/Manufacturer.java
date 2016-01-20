@@ -8,7 +8,7 @@ import javax.persistence.*;
  * Created by mr.taranto on 1/16/2016.
  */
 @Entity
-@AttributeOverride(name = "ID", column = @Column(name = "manufacturer_id"))
+@AttributeOverride(name = "id", column = @Column(name = "manufacturer_id"))
 public class Manufacturer extends AbstractEntity{
 
     @Column(nullable = false)

@@ -9,7 +9,7 @@ import java.util.List;
  * Created by Odiljon Sattarov on 1/18/2016.
  */
 @Entity
-@AttributeOverride(name = "ID", column = @Column(name = "country_id"))
+@AttributeOverride(name = "id", column = @Column(name = "country_id"))
 public class Country extends AbstractEntity {
     @Column(name = "country_name", nullable = false)
     private String countryName;
@@ -19,7 +19,7 @@ public class Country extends AbstractEntity {
     private String countryCode3;
     private boolean enabled = true;
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "country_id", referencedColumnName = "ID")
+    @JoinColumn(name = "country_id", referencedColumnName = "country_id")
     private List<State> states;
 
     public String getCountryName() {
