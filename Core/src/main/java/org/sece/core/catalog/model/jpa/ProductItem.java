@@ -70,6 +70,10 @@ public class ProductItem extends AbstractDatableEntity {
     private Condition condition;
     @Lob
     private String warranty;
+    @Column(name = "handling_fee")
+    private long handlingFee = 0;
+    @Column(name = "handling_cost")
+    private long handlingCost = 0;
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_item_id", referencedColumnName = "ID")
     private List<ProductItemOption> productItemOptions;
@@ -267,6 +271,22 @@ public class ProductItem extends AbstractDatableEntity {
 
     public void setWarranty(String warranty) {
         this.warranty = warranty;
+    }
+
+    public long getHandlingFee() {
+        return handlingFee;
+    }
+
+    public void setHandlingFee(long handlingFee) {
+        this.handlingFee = handlingFee;
+    }
+
+    public long getHandlingCost() {
+        return handlingCost;
+    }
+
+    public void setHandlingCost(long handlingCost) {
+        this.handlingCost = handlingCost;
     }
 
     public List<ProductItemOption> getProductItemOptions() {
